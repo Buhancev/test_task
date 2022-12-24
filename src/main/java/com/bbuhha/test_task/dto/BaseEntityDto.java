@@ -11,7 +11,6 @@ import lombok.Data;
 
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class BaseEntityDto {
     protected Long id;
 

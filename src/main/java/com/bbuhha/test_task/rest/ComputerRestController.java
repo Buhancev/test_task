@@ -24,12 +24,10 @@ public class ComputerRestController {
 
     @DeleteMapping("/{id}")
     public Computer deleteById(@PathVariable(value = "id") Long id) {
-        Computer computer = computerService.deleteById(id);
-
-        return computer;
+        return computerService.deleteById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<Computer> getAllComputers() {
 
         Iterable<Computer> result = computerService.findAll();
@@ -39,8 +37,6 @@ public class ComputerRestController {
 
     @GetMapping("/{id}")
     public Computer findById(@PathVariable(value = "id") Long id) {
-        Computer result = computerService.findById(id);
-
-        return result;
+        return computerService.findById(id);
     }
 }

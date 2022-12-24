@@ -30,7 +30,7 @@ public class MonitorRestController {
         return monitorService.deleteById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<Monitor> getAllMonitors() {
         Iterable<Monitor> result = monitorService.findAll();
 

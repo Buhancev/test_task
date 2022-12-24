@@ -1,5 +1,6 @@
 package com.bbuhha.test_task.service.Impl;
 
+import com.bbuhha.test_task.exceptionHandling.NoSuchException;
 import com.bbuhha.test_task.model.HardDisk;
 import com.bbuhha.test_task.model.Monitor;
 import com.bbuhha.test_task.repository.HardDiskRepo;
@@ -33,7 +34,7 @@ public class HardDiskServiceImpl implements Service<HardDisk> {
         Optional<HardDisk> result = hardDiskRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         hardDiskRepo.deleteById(id);
@@ -47,7 +48,7 @@ public class HardDiskServiceImpl implements Service<HardDisk> {
         Optional<HardDisk> result = hardDiskRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         return result.get();
@@ -57,10 +58,6 @@ public class HardDiskServiceImpl implements Service<HardDisk> {
     @Transactional
     public Iterable<HardDisk> findAll() {
         Optional<Iterable<HardDisk>> result = Optional.of(hardDiskRepo.findAll());
-
-        if(result.isEmpty()) {
-            //
-        }
 
         return result.get();
     }

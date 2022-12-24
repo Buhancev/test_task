@@ -28,7 +28,7 @@ public class LaptopRestController {
         return laptopService.deleteById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<Laptop> getAllLaptops() {
         Iterable<Laptop> result = laptopService.findAll();
 

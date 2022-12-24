@@ -1,5 +1,6 @@
 package com.bbuhha.test_task.service.Impl;
 
+import com.bbuhha.test_task.exceptionHandling.NoSuchException;
 import com.bbuhha.test_task.model.Computer;
 import com.bbuhha.test_task.repository.ComputerRepo;
 import com.bbuhha.test_task.service.Service;
@@ -32,7 +33,7 @@ public class ComputerServiceImpl implements Service<Computer> {
         Optional<Computer> result = computerRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         computerRepo.deleteById(id);
@@ -46,7 +47,7 @@ public class ComputerServiceImpl implements Service<Computer> {
         Optional<Computer> result = computerRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         return result.get();
@@ -56,10 +57,6 @@ public class ComputerServiceImpl implements Service<Computer> {
     @Transactional
     public Iterable<Computer> findAll() {
         Optional<Iterable<Computer>> result = Optional.of(computerRepo.findAll());
-
-        if(result.isEmpty()) {
-            //
-        }
 
         return result.get();
     }

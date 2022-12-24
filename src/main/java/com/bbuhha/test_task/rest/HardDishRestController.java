@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api/harddisk", produces = "application/json")
+@RequestMapping(value = "/api/harddisks", produces = "application/json")
 public class HardDishRestController {
     private final HardDiskServiceImpl hardDiskService;
 
@@ -26,14 +26,11 @@ public class HardDishRestController {
 
     @DeleteMapping("/{id}")
     public HardDisk deleteById(@PathVariable(value = "id") Long id) {
-        HardDisk result = hardDiskService.deleteById(id);
-
-        return result;
+        return hardDiskService.deleteById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public Iterable<HardDisk> getAllComputers() {
-
         Iterable<HardDisk> result = hardDiskService.findAll();
 
         return result;
@@ -41,8 +38,6 @@ public class HardDishRestController {
 
     @GetMapping("/{id}")
     public HardDisk findById(@PathVariable(value = "id") Long id) {
-        HardDisk result = hardDiskService.findById(id);
-
-        return result;
+        return hardDiskService.findById(id);
     }
 }

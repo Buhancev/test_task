@@ -1,5 +1,6 @@
 package com.bbuhha.test_task.service.Impl;
 
+import com.bbuhha.test_task.exceptionHandling.NoSuchException;
 import com.bbuhha.test_task.model.Monitor;
 import com.bbuhha.test_task.repository.MonitorRepo;
 import com.bbuhha.test_task.service.Service;
@@ -32,7 +33,7 @@ public class MonitorServiceImpl implements Service<Monitor> {
         Optional<Monitor> result = monitorRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         monitorRepo.deleteById(id);
@@ -46,7 +47,7 @@ public class MonitorServiceImpl implements Service<Monitor> {
         Optional<Monitor> result = monitorRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         return result.get();
@@ -56,10 +57,6 @@ public class MonitorServiceImpl implements Service<Monitor> {
     @Transactional
     public Iterable<Monitor> findAll() {
         Optional<Iterable<Monitor>> result = Optional.of(monitorRepo.findAll());
-
-        if(result.isEmpty()) {
-            //
-        }
 
         return result.get();
     }

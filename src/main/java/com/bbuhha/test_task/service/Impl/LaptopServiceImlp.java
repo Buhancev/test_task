@@ -1,5 +1,6 @@
 package com.bbuhha.test_task.service.Impl;
 
+import com.bbuhha.test_task.exceptionHandling.NoSuchException;
 import com.bbuhha.test_task.model.Laptop;
 import com.bbuhha.test_task.repository.LaptopRepo;
 import com.bbuhha.test_task.service.Service;
@@ -33,7 +34,7 @@ public class LaptopServiceImlp implements Service<Laptop> {
         Optional<Laptop> result = laptopRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         laptopRepo.deleteById(id);
@@ -47,7 +48,7 @@ public class LaptopServiceImlp implements Service<Laptop> {
         Optional<Laptop> result = laptopRepo.findById(id);
 
         if(result.isEmpty()) {
-            //
+            throw new NoSuchException("Error! There is nothing on the specified ID = " + id);
         }
 
         return result.get();
@@ -57,10 +58,6 @@ public class LaptopServiceImlp implements Service<Laptop> {
     @Transactional
     public Iterable<Laptop> findAll() {
         Optional<Iterable<Laptop>> result = Optional.of(laptopRepo.findAll());
-
-        if(result.isEmpty()) {
-            //
-        }
 
         return result.get();
     }
