@@ -1,9 +1,9 @@
 package com.bbuhha.test_task.dto;
 
 import com.bbuhha.test_task.model.HardDisk;
-import com.bbuhha.test_task.model.Laptop;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+
+import javax.validation.constraints.NotNull;
 
 @Data
 public class HardDiskDto extends BaseEntityDto{

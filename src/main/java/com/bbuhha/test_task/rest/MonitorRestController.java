@@ -1,14 +1,12 @@
 package com.bbuhha.test_task.rest;
 
-import com.bbuhha.test_task.dto.LaptopDto;
 import com.bbuhha.test_task.dto.MonitorDto;
-import com.bbuhha.test_task.model.Laptop;
 import com.bbuhha.test_task.model.Monitor;
-import com.bbuhha.test_task.service.Impl.LaptopServiceImlp;
 import com.bbuhha.test_task.service.Impl.MonitorServiceImpl;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/monitors", produces = "application/json")

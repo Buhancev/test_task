@@ -4,9 +4,9 @@ import com.bbuhha.test_task.exceptionHandling.NoSuchException;
 import com.bbuhha.test_task.model.Computer;
 import com.bbuhha.test_task.repository.ComputerRepo;
 import com.bbuhha.test_task.service.Service;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @org.springframework.stereotype.Service

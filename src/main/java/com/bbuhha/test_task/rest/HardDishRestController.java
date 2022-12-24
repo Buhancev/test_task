@@ -1,13 +1,12 @@
 package com.bbuhha.test_task.rest;
 
-import com.bbuhha.test_task.dto.ComputerDto;
 import com.bbuhha.test_task.dto.HardDiskDto;
-import com.bbuhha.test_task.model.Computer;
 import com.bbuhha.test_task.model.HardDisk;
 import com.bbuhha.test_task.service.Impl.HardDiskServiceImpl;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/api/harddisks", produces = "application/json")

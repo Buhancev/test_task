@@ -1,7 +1,8 @@
 package com.bbuhha.test_task.model;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
+import javax.persistence.*;
 
 @MappedSuperclass
 @Data
