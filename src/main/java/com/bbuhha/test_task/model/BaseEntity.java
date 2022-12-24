@@ -10,14 +10,14 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    protected Long id;
 
     @Column(name = "serial_number")
-    private Long serialNumber;
+    protected String serialNumber;
 
     @Column(name = "manufacturer")
-    private String manufacturer;
+    protected String manufacturer;
 
     @Column(name = "amount")
-    private int amount;
+    protected int amount;
 }
