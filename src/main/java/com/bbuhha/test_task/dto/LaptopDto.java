@@ -36,5 +36,4 @@ public class LaptopDto extends BaseEntityDto{
 
         return laptopDto;
     }
-
 }
