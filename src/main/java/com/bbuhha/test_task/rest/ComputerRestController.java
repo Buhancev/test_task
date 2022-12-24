@@ -2,20 +2,18 @@ package com.bbuhha.test_task.rest;
 
 import com.bbuhha.test_task.dto.ComputerDto;
 import com.bbuhha.test_task.model.Computer;
-import com.bbuhha.test_task.service.ComputerService;
+import com.bbuhha.test_task.service.Impl.ComputerServiceImpl;
+import com.bbuhha.test_task.service.Service;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "/api/computers", produces = "application/json")
 public class ComputerRestController {
-    private final ComputerService computerService;
-
+    private final ComputerServiceImpl computerService;
     @Autowired
-    public ComputerRestController(ComputerService computerService) {
+    public ComputerRestController(ComputerServiceImpl computerService) {
         this.computerService = computerService;
     }
 

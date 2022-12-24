@@ -2,16 +2,14 @@ package com.bbuhha.test_task.service.Impl;
 
 import com.bbuhha.test_task.model.Computer;
 import com.bbuhha.test_task.repository.ComputerRepo;
-import com.bbuhha.test_task.service.ComputerService;
+import com.bbuhha.test_task.service.Service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ComputerServiceImpl implements ComputerService {
+@org.springframework.stereotype.Service
+public class ComputerServiceImpl implements Service<Computer> {
 
     private final ComputerRepo computerRepo;
 
@@ -29,6 +27,7 @@ public class ComputerServiceImpl implements ComputerService {
     }
 
     @Override
+    @Transactional
     public Computer deleteById(Long id) {
         Optional<Computer> result = computerRepo.findById(id);
 
@@ -42,6 +41,7 @@ public class ComputerServiceImpl implements ComputerService {
     }
 
     @Override
+    @Transactional
     public Computer findById(Long id) {
         Optional<Computer> result = computerRepo.findById(id);
 
@@ -53,6 +53,7 @@ public class ComputerServiceImpl implements ComputerService {
     }
 
     @Override
+    @Transactional
     public Iterable<Computer> findAll() {
         Optional<Iterable<Computer>> result = Optional.of(computerRepo.findAll());
 

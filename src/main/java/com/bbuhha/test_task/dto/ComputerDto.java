@@ -1,9 +1,7 @@
 package com.bbuhha.test_task.dto;
 
-import com.bbuhha.test_task.model.BaseEntity;
 import com.bbuhha.test_task.model.Computer;
 import com.bbuhha.test_task.model.FormFactor;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
