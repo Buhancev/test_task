@@ -19,6 +19,9 @@ public class BaseEntity {
     @Column(name = "manufacturer")
     protected String manufacturer;
 
-    @Column(name = "amount")
-    protected int amount;
+    @Column(name = "price")
+    protected int price;
+
+    @Column(name = "quantity_stock")
+    protected int quantityStock;
 }

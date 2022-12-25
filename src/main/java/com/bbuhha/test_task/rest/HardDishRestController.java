@@ -19,7 +19,7 @@ public class HardDishRestController {
     }
 
     @PostMapping("/")
-    public HardDisk createOrUpdateComputer(@Valid @RequestBody HardDiskDto hardDiskDto) {
+    public HardDisk createOrUpdate(@Valid @RequestBody HardDiskDto hardDiskDto) {
         return hardDiskService.saveOrUpdate(hardDiskDto.toEntity());
     }
 
@@ -29,7 +29,7 @@ public class HardDishRestController {
     }
 
     @GetMapping("")
-    public Iterable<HardDisk> getAllComputers() {
+    public Iterable<HardDisk> getAll() {
         Iterable<HardDisk> result = hardDiskService.findAll();
 
         return result;

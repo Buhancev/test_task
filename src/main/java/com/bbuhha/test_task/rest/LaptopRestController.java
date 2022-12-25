@@ -17,7 +17,7 @@ public class LaptopRestController {
     }
 
     @PostMapping("/")
-    public Laptop createOrUpdateLaptop(@Valid @RequestBody LaptopDto laptopDto) {
+    public Laptop createOrUpdate(@Valid @RequestBody LaptopDto laptopDto) {
         return laptopService.saveOrUpdate(laptopDto.toEntity());
     }
 
@@ -27,7 +27,7 @@ public class LaptopRestController {
     }
 
     @GetMapping("")
-    public Iterable<Laptop> getAllLaptops() {
+    public Iterable<Laptop> getAll() {
         Iterable<Laptop> result = laptopService.findAll();
 
         return result;

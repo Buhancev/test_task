@@ -14,10 +14,12 @@ public class LaptopDto extends BaseEntityDto{
     public Laptop toEntity() {
         Laptop laptop = new Laptop();
 
-        laptop.setId(super.id);
-        laptop.setSerialNumber(super.serialNumber);
-        laptop.setManufacturer(super.manufacturer);
-        laptop.setAmount(super.amount);
+        laptop.setId(id);
+        laptop.setSerialNumber(serialNumber);
+        laptop.setManufacturer(manufacturer);
+        laptop.setPrice(price);
+        laptop.setQuantityStock(quantityStock);
+
         laptop.setInches(inches);
 
         return laptop;
@@ -26,9 +28,12 @@ public class LaptopDto extends BaseEntityDto{
     public static LaptopDto fromEntity(Laptop laptop) {
         LaptopDto laptopDto = new LaptopDto();
 
+        laptopDto.setId(laptop.getId());
         laptopDto.setSerialNumber(laptop.getSerialNumber());
         laptopDto.setManufacturer(laptop.getManufacturer());
-        laptopDto.setAmount(laptop.getAmount());
+        laptopDto.setPrice(laptop.getPrice());
+        laptopDto.setQuantityStock(laptop.getQuantityStock());
+
         laptopDto.setInches(laptop.getInches());
 
         return laptopDto;

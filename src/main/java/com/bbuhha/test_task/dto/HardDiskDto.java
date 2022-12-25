@@ -11,13 +11,16 @@ public class HardDiskDto extends BaseEntityDto{
     @NotNull
     private int capacity;
 
+
     public HardDisk toEntity() {
         HardDisk hardDisk = new HardDisk();
 
-        hardDisk.setId(super.id);
-        hardDisk.setSerialNumber(super.serialNumber);
-        hardDisk.setManufacturer(super.manufacturer);
-        hardDisk.setAmount(super.amount);
+        hardDisk.setId(id);
+        hardDisk.setSerialNumber(serialNumber);
+        hardDisk.setManufacturer(manufacturer);
+        hardDisk.setPrice(price);
+        hardDisk.setQuantityStock(quantityStock);
+
         hardDisk.setCapacity(capacity);
 
         return hardDisk;
@@ -26,9 +29,12 @@ public class HardDiskDto extends BaseEntityDto{
     public static HardDiskDto fromEntity(HardDisk hardDisk) {
         HardDiskDto hardDiskDto = new HardDiskDto();
 
+        hardDiskDto.setId(hardDisk.getId());
         hardDiskDto.setSerialNumber(hardDisk.getSerialNumber());
         hardDiskDto.setManufacturer(hardDisk.getManufacturer());
-        hardDiskDto.setAmount(hardDisk.getAmount());
+        hardDiskDto.setPrice(hardDisk.getPrice());
+        hardDiskDto.setQuantityStock(hardDisk.getQuantityStock());
+
         hardDiskDto.setCapacity(hardDisk.getCapacity());
 
         return hardDiskDto;

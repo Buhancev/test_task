@@ -18,7 +18,7 @@ public class ComputerRestController {
     }
 
     @PostMapping("/")
-    public Computer createOrUpdateComputer(@Valid @RequestBody ComputerDto computerDto) {
+    public Computer createOrUpdate(@Valid @RequestBody ComputerDto computerDto) {
         return computerService.saveOrUpdate(computerDto.toEntity());
     }
 
@@ -28,8 +28,7 @@ public class ComputerRestController {
     }
 
     @GetMapping("")
-    public Iterable<Computer> getAllComputers() {
-
+    public Iterable<Computer> getAll() {
         Iterable<Computer> result = computerService.findAll();
 
         return result;

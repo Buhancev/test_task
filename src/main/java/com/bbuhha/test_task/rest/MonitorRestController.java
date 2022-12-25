@@ -19,7 +19,7 @@ public class MonitorRestController {
     }
 
     @PostMapping("/")
-    public Monitor createOrUpdateMonitor(@Valid @RequestBody MonitorDto monitorDto) {
+    public Monitor createOrUpdate(@Valid @RequestBody MonitorDto monitorDto) {
         return monitorService.saveOrUpdate(monitorDto.toEntity());
     }
 
@@ -29,7 +29,7 @@ public class MonitorRestController {
     }
 
     @GetMapping("")
-    public Iterable<Monitor> getAllMonitors() {
+    public Iterable<Monitor> getAll() {
         Iterable<Monitor> result = monitorService.findAll();
 
         return result;

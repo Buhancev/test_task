@@ -16,7 +16,6 @@ public class BaseEntityDto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
-
     @NotEmpty
     protected String serialNumber;
 
@@ -24,7 +23,12 @@ public class BaseEntityDto {
     protected String manufacturer;
 
     @NotNull
-    protected int amount;
+    protected int price;
+
+    @NotNull
+    protected int quantityStock;
+
+
 
     public BaseEntity toEntity(){
         BaseEntity baseEntity = new BaseEntity();
@@ -32,7 +36,8 @@ public class BaseEntityDto {
         baseEntity.setId(id);
         baseEntity.setSerialNumber(serialNumber);
         baseEntity.setManufacturer(manufacturer);
-        baseEntity.setAmount(amount);
+        baseEntity.setPrice(price);
+        baseEntity.setQuantityStock(quantityStock);
 
         return baseEntity;
     }
@@ -40,9 +45,11 @@ public class BaseEntityDto {
     public static BaseEntityDto fromEntity(BaseEntity baseEntity) {
         BaseEntityDto baseEntityDto = new BaseEntityDto();
 
+        baseEntityDto.setId(baseEntity.getId());
         baseEntityDto.setSerialNumber(baseEntity.getSerialNumber());
         baseEntityDto.setManufacturer(baseEntity.getManufacturer());
-        baseEntityDto.setAmount(baseEntity.getAmount());
+        baseEntityDto.setPrice(baseEntity.getPrice());
+        baseEntityDto.setQuantityStock(baseEntity.getQuantityStock());
 
         return baseEntityDto;
     }

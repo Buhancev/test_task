@@ -15,10 +15,12 @@ public class ComputerDto extends BaseEntityDto{
     public Computer toEntity() {
         Computer computer = new Computer();
 
-        computer.setId(super.id);
-        computer.setSerialNumber(super.serialNumber);
-        computer.setManufacturer(super.manufacturer);
-        computer.setAmount(super.amount);
+        computer.setId(id);
+        computer.setSerialNumber(serialNumber);
+        computer.setManufacturer(manufacturer);
+        computer.setPrice(price);
+        computer.setQuantityStock(quantityStock);
+
         computer.setFormFactor(formFactor);
 
         return computer;
@@ -27,9 +29,12 @@ public class ComputerDto extends BaseEntityDto{
     public static ComputerDto fromEntity(Computer computer) {
         ComputerDto computerDto = new ComputerDto();
 
+        computerDto.setId(computer.getId());
         computerDto.setSerialNumber(computer.getSerialNumber());
         computerDto.setManufacturer(computer.getManufacturer());
-        computerDto.setAmount(computer.getAmount());
+        computerDto.setPrice(computer.getPrice());
+        computerDto.setQuantityStock(computer.getQuantityStock());
+
         computerDto.setFormFactor(computer.getFormFactor());
 
         return computerDto;

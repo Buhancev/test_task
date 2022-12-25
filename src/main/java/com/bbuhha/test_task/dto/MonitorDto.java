@@ -16,7 +16,9 @@ public class MonitorDto extends BaseEntityDto{
         monitor.setId(id);
         monitor.setSerialNumber(serialNumber);
         monitor.setManufacturer(manufacturer);
-        monitor.setAmount(amount);
+        monitor.setPrice(price);
+        monitor.setQuantityStock(quantityStock);
+
         monitor.setDiagonal(diagonal);
 
         return monitor;
@@ -25,9 +27,12 @@ public class MonitorDto extends BaseEntityDto{
     public static MonitorDto fromEntity(Monitor monitor) {
         MonitorDto monitorDto = new MonitorDto();
 
+        monitorDto.setId(monitor.getId());
         monitorDto.setSerialNumber(monitor.getSerialNumber());
         monitorDto.setManufacturer(monitor.getManufacturer());
-        monitorDto.setAmount(monitor.getAmount());
+        monitorDto.setPrice(monitor.getPrice());
+        monitorDto.setQuantityStock(monitor.getQuantityStock());
+
         monitorDto.setDiagonal(monitor.getDiagonal());
 
         return monitorDto;
